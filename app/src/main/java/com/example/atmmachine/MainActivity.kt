@@ -122,12 +122,12 @@ fun Screen() {
                 horizontalArrangement = Arrangement.End
             ) {
                 Button(onClick = {
-                    var amt = input.toDouble()
+
                     var atm = ATM()
                     try {
                         result = when (option) {
-                            "Withdraw" -> atm.withdraw(amt)
-                            "Deposit" -> atm.deposit(amt)
+                            "Withdraw" ->    atm.withdraw(input.toDouble())
+                            "Deposit" -> atm.deposit(input.toDouble())
                             "Display Balance" -> atm.printBalance()
                             else -> "Invalid Choice"
                         }

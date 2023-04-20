@@ -107,6 +107,7 @@ fun Screen() {
 
         var result by  remember { mutableStateOf("") }
         var input by remember { mutableStateOf("") }
+        var atm = ATM()
         if(option!="Display Balance") {
 
             OutlinedTextField(
@@ -123,7 +124,7 @@ fun Screen() {
             ) {
                 Button(onClick = {
 
-                    var atm = ATM()
+
                     try {
                         result = when (option) {
                             "Withdraw" ->    atm.withdraw(input.toDouble())
